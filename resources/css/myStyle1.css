@@ -1,0 +1,27 @@
+@CHARSET "ISO-8859-1";
+
+body {
+	background: url('../images/sfondo1.jpg');
+}
+
+.border-black {
+	border: 1px;
+	border-style: solid;
+	border-color: black;
+}
+
+ul.simple {
+	list-style-type: none;
+}
+
+.bold {
+	font-weight: bold;
+}
+
+.white-background {
+	background: white;
+}
+
+.margin-top-20 {
+	margin-top: 20px;
+}

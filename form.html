@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+<title>Register</title>
+
+<!-- Bootstrap -->
+<link href="resources/css/bootstrap.min.css" rel="stylesheet">
+
+<link href="resources/css/form.css" rel="stylesheet">
+
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+	<div class="container">
+		<div id="header"></div>
+
+		<div class="jumbotron">
+			<div align="center">
+				<h1>Inserisci i tuoi dati:</h1>
+			</div>
+
+			<form class="form-horizontal" id="form">
+				<div class="row">
+					<div class="col-md-4">
+						<label for="nome">Nome</label>
+						<input type="text" class="form-control" id="nome" placeholder="inserisci il tuo nome">
+					</div>
+					<div class="col-md-4">
+						<label for="cognome">Cognome</label>
+						<input type="text" class="form-control" id="cognome" placeholder="inserisci il tuo cognome">
+					</div>
+					<div class="col-md-4">
+						<label for="data">Data</label>
+						<input type="date" id="data">
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-4">
+						<div class="form-group form-inline">
+							<label for="via">Via</label>
+							<textarea class="form-control" id="via" placeholder="inserisci l'indirizzo" rows="3"></textarea>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<label for="cap">Cap</label>
+						<input type="number" class="form-control" id="cap" maxlength="5" oninput="digit_limit_5(this)"
+							placeholder="inserisci il codice di apertura postale">
+					</div>
+					<div class="col-md-4">
+						<label for="città">Città</label>
+						<select class="form-control">
+							<optgroup label="Europe">
+								<option value="Rome">Rome</option>
+								<option value="Paris">Paris</option>
+							</optgroup>
+							<optgroup label="North America">
+								<option value="New York">New York</option>
+							</optgroup>
+						</select>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						<div class="checkbox">
+							<label>
+								<span>
+									<input type="checkbox" data-toggle="modal" data-target="#tipoLaurea" id="laurea">
+									Laurea?
+								</span>
+							</label>
+						</div>
+					</div>
+				</div>
+				<div class="modal fade" id="tipoLaurea" tabindex="-1" role="dialog" aria-labelledby="purchaseLabel" aria-hidden="true">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h4 class="modal-title">Tipo Laurea</h4>
+							</div>
+							<div class="modal-body">
+								<div class="radio">
+									<label>
+										<input type="radio" value="triennale">
+										Triennale
+									</label>
+									<label>
+										<input type="radio" value="magistrale">
+										Magistrale
+									</label>
+									<label>
+										<input type="radio" value="master">
+										Master
+									</label>
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</form>
+			<hr>
+			<div align="center">
+				<button class="btn btn-default" onclick="confermato()">Conferma</button>
+				<button class="btn btn-default" data-toggle="collapse" data-target="#collapse-tabella" aria-expanded="false" onclick="aggiungiRighe()"
+					id="altriUtenti">Visualizza altri utenti</button>
+			</div>
+			<div class="collapse" id="collapse-tabella">
+				<div class="well table-responsive">
+					<table class="table table-striped" id="tabella">
+						<thead id="thead">
+							<tr>
+								<th>Nome</th>
+								<th>Cognome</th>
+								<th>Età</th>
+								<th>Laurea</th>
+								<th>Azioni</th>
+							</tr>
+						</thead>
+						<tbody id="table-body">
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+		<div id="footer"></div>
+	</div>
+
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="resources/js/bootstrap.min.js"></script>
+	<script src="resources/js/common.js"></script>
+	<script type="text/javascript" src="resources/js/form.js"></script>
+</body>
+</html>
