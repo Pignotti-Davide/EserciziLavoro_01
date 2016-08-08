@@ -59,6 +59,10 @@ function aggiungiRighe(){
 	else tabella.style.visibility="hidden";
 };
 
+$('#laurea').click(function() {
+    $("#tipo_laurea").toggle(this.checked);
+});
+
 function canc(j){
 	utenti.splice(j,1);
 	aggiungiRighe();

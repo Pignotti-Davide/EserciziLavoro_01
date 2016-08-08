@@ -73,38 +73,24 @@
 						<div class="checkbox">
 							<label>
 								<span>
-									<input type="checkbox" data-toggle="modal" data-target="#tipoLaurea" id="laurea">
+									<input type="checkbox" onclick="radio_visible()" id="laurea">
 									Laurea?
 								</span>
 							</label>
 						</div>
-					</div>
-				</div>
-				<div class="modal fade" id="tipoLaurea" tabindex="-1" role="dialog" aria-labelledby="purchaseLabel" aria-hidden="true">
-					<div class="modal-dialog">
-						<div class="modal-content">
-							<div class="modal-header">
-								<h4 class="modal-title">Tipo Laurea</h4>
-							</div>
-							<div class="modal-body">
-								<div class="radio">
-									<label>
-										<input type="radio" value="triennale">
-										Triennale
-									</label>
-									<label>
-										<input type="radio" value="magistrale">
-										Magistrale
-									</label>
-									<label>
-										<input type="radio" value="master">
-										Master
-									</label>
-								</div>
-								<div class="modal-footer">
-									<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-								</div>
-							</div>
+						<div class="radio" id="tipo_laurea" style="display: none;">
+							<label>
+								<input type="radio" value="triennale">
+								Triennale
+							</label>
+							<label>
+								<input type="radio" value="magistrale">
+								Magistrale
+							</label>
+							<label>
+								<input type="radio" value="master">
+								Master
+							</label>
 						</div>
 					</div>
 				</div>
