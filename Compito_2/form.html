@@ -40,8 +40,8 @@
 						</div>
 						<div class="col-md-4">
 							<label class="maroon" for="data">Data</label>
-							<div class='input-group date datepicker' id='data' data-date-format="dd-mm-yyyy">
-								<input type='text' class="form-control" placeholder="dd/mm/aaaa" id="birthday" />
+							<div class="input-group date datepicker" id="data" data-date-format="dd-mm-yyyy">
+								<input type="text" class="form-control" placeholder="dd/mm/aaaa" id="birthday" />
 								<span class="input-group-addon">
 									<span class="glyphicon glyphicon-calendar"></span>
 								</span>
@@ -81,8 +81,8 @@
 									</label>
 								</div>
 							</div>
-							<div class="col-md-8">
-								<div class="radio hidden" id="tipo_laurea">
+							<div class="col-md-8 notVisible" id="tipo_laurea" >
+								<div class="radio">
 									<input type="radio" name="tipo" value="triennale">
 									Triennale
 									<input type="radio" name="tipo" value="magistrale">
@@ -99,19 +99,19 @@
 				<div class="row">
 					<div class="col-md-12">
 						<div align="center">
-							<button class="btn btn-default" onclick="confermato()">Conferma</button>
-							<button class="btn btn-default" data-toggle="collapse" data-target="#collapse-tabella" aria-expanded="false" onclick="aggiungiRighe()"
+							<button class="btn btn-default" onclick="confirm()">Conferma</button>
+							<button class="btn btn-default" data-toggle="collapse" data-target="#collapse-tabella" aria-expanded="false" onclick="addRows()"
 								id="altriUtenti">Visualizza altri utenti</button>
 						</div>
 					</div>
 				</div>
 			</div>
-			<div class="panel">
+			<div class="panel notVisible" id="table_panel">
 				<div class="row">
 					<div class="col-md-12">
 						<div class="collapse" id="collapse-tabella">
-							<div class="well table-responsive">
-								<table class="table table-striped" id="tabella">
+							<div class="table-responsive">
+								<table class="table table-bordered" id="tabella">
 									<thead id="thead">
 										<tr>
 											<th>Nome</th>

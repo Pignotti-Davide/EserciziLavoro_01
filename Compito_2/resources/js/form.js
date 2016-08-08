@@ -1,9 +1,9 @@
-var utenti=[];
+var users=[];
 var selectedDate;
 
 
 function digit_limit_5() {
-	var cap = document.getElementById("cap");
+	var cap = $("#cap");
 	if (cap.value.length > 5) {
 		cap.value = obj.value.slice(0,5); 
 	}
@@ -17,52 +17,55 @@ function isNumberKey(evt){
 	return true;
 }
 
-function confermato() {
-	var utente=new Object();
-	utente.nome=$("#nome").val();
-	utente.cognome=$("#cognome").val();
-	utente.eta=calcAge($("#data").val());
-	if($('#laurea').prop('checked'))
-		utente.laurea="Si";
-	else utente.laurea="No";
-	utenti.push(utente);
+function confirm() {
+	var user=new Object();
+	user.nome=$("#nome").val();
+	user.cognome=$("#cognome").val();
+	user.eta=calcAge($("#data").val());
+	if($('#laurea').prop('checked')){
+		user.laurea="Si";
+	}
+	else user.laurea="No";
+	users.push(user);
 	$('#form').trigger("reset");
 };
 
 
-function aggiungiRighe(){
-	var tabella=document.getElementById("tabella");
-	if (utenti.length!=0) {
-		tabella.style.visibility="visible";
+function addRows(){
+	var table=$("#table_panel");
+	if (users.length!=0) {
+		table.removeClass("notVisible")
 		var tbody = $("#table-body");
 		tbody.empty();
 		var colonne = $("#thead").length; 
 		var tr = document.createElement('tr');
-		for(var j=0; j<utenti.length; j++){
-			var utente=utenti[j];
+		for(var j=0; j<users.length; j++){
+			var user=users[j];
 			var td = document.createElement('td');
-			tbody.append("<tr>" +
-					"<td>"+utente.nome+"</td>" +
-					"<td>"+utente.cognome+"</td>" +
-					"<td>"+utente.eta+"</td>" +
-					"<td>"+utente.laurea+"</td>" +
+			tbody.append(
+					"<tr>" +
+					"<td>"+user.nome+"</td>" +
+					"<td>"+user.cognome+"</td>" +
+					"<td>"+user.eta+"</td>" +
+					"<td>"+user.laurea+"</td>" +
 					"<td>" +
-					"<button onclick='canc("+j+")'>" +
-					" <span class='glyphicon glyphicon-remove'></span></td>" +
+					"<button class='btn btn-danger' onclick='deleteRow("+j+")'> Delete" +
 					"</button>" +
-			"</tr>");
+					" </td>" +
+					"</tr>"
+			);
 		};
 	}
-	else tabella.style.visibility="hidden";
+	else table.addClass("notVisible");
 };
 
 $('#laurea').click(function() {
 	$("#tipo_laurea").toggle(this.checked);
 });
 
-function canc(j){
-	utenti.splice(j,1);
-	aggiungiRighe();
+function deleteRow(j){
+	users.splice(j,1);
+	addRows();
 };
 
 $(function () {
