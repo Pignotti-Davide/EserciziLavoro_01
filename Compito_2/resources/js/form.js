@@ -1,30 +1,26 @@
 var utenti=[];
 var numClick=0;
-var cancellaUtente=
 
 
-function digit_limit_5(obj) {
-	 if (obj.value.length > 4) {
-		 obj.value = obj.value.slice(0,5); 
+function digit_limit_5() {
+	var cap = document.getElementById("cap");
+	if (cap.value.length > 5) {
+		 cap.value = obj.value.slice(0,5); 
 	 }
 };
 
-function calcAge (birthday) {
-    birthday = new Date(birthday);
-    today     = new Date();
-    var years = (today.getFullYear() - birthday.getFullYear());
-    if (today.getMonth() < birthday.getMonth() || 
-        today.getMonth() == birthday.getMonth() && today.getDate() < birthday.getDate()) {
-        years--;
-    }
-    return years;
-};
+function isNumberKey(evt){
+    var charCode = (evt.which) ? evt.which : event.keyCode
+    if (charCode > 31 && (charCode < 48 || charCode > 57))
+        return false;
+    return true;
+}
 
 function confermato() {
 	var utente=new Object();
 	utente.nome=$("#nome").val();
 	utente.cognome=$("#cognome").val();
-	utente.eta=calcAge($("#data").val());
+//	utente.eta=calcAge($("#data").val());
 	if($('#laurea').prop('checked'))
 	utente.laurea="Si";
 	else utente.laurea="No";
@@ -68,4 +64,19 @@ function canc(j){
 	aggiungiRighe();
 };
 
-
+$(function () {
+    $('#data').datetimepicker();
+});
+//
+//function calcAge (birthday) {
+//	
+//    da = new Date(birthday);
+//    birthday=$("#birthday").getDate();
+//    today     = new Date();
+//    var years = (today.getFullYear() - birthday.getFullYear());
+//    if (today.getMonth() < birthday.getMonth() || 
+//        today.getMonth() == birthday.getMonth() && today.getDate() < birthday.getDate()) {
+//        years--;
+//    }
+//    return years;
+//};

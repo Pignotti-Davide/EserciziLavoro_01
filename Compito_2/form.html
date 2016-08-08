@@ -27,7 +27,6 @@
 			<div align="center">
 				<h1>Inserisci i tuoi dati:</h1>
 			</div>
-
 			<form class="form-horizontal" id="form">
 				<div class="row">
 					<div class="col-md-4">
@@ -40,9 +39,15 @@
 					</div>
 					<div class="col-md-4">
 						<label for="data">Data</label>
-						<input type="date" id="data">
+						<div class='input-group date' id='data'>
+							<input type='text' class="form-control" placeholder="dd/mm/aaaa" id="birthday" />
+							<span class="input-group-addon">
+								<span class="glyphicon glyphicon-calendar"></span>
+							</span>
+						</div>
 					</div>
 				</div>
+				<hr>
 				<div class="row">
 					<div class="col-md-4">
 						<div class="form-group form-inline">
@@ -52,7 +57,7 @@
 					</div>
 					<div class="col-md-4">
 						<label for="cap">Cap</label>
-						<input type="number" class="form-control" id="cap" maxlength="5" oninput="digit_limit_5(this)"
+						<input type="text" class="form-control" id="cap" maxlength="5" oninput="digit_limit_5()" onkeypress="return isNumberKey(event)"
 							placeholder="inserisci il codice di apertura postale">
 					</div>
 					<div class="col-md-4">
@@ -68,54 +73,65 @@
 						</select>
 					</div>
 				</div>
+				<hr>
 				<div class="row">
-					<div class="col-md-12">
-						<div class="checkbox">
-							<label>
-								<span>
-									<input type="checkbox" onclick="radio_visible()" id="laurea">
-									Laurea?
-								</span>
-							</label>
+
+					<div class="form-group form-inline">
+						<div class="col-md-4">
+							<div class="checkbox">
+								<label>
+									<span>
+										Laurea?
+										<input type="checkbox" id="laurea">
+
+									</span>
+								</label>
+							</div>
 						</div>
-						<div class="radio" id="tipo_laurea" style="display: none;">
-							<label>
-								<input type="radio" value="triennale">
+						<div class="col-md-8">
+							<div class="radio" id="tipo_laurea" style="display: none;">
+
+								<input type="radio" name="tipo" value="triennale">
 								Triennale
-							</label>
-							<label>
-								<input type="radio" value="magistrale">
+								<input type="radio" name="tipo" value="magistrale">
 								Magistrale
-							</label>
-							<label>
-								<input type="radio" value="master">
+								<input type="radio" name="tipo" value="master">
 								Master
-							</label>
+							</div>
 						</div>
 					</div>
 				</div>
 			</form>
 			<hr>
-			<div align="center">
-				<button class="btn btn-default" onclick="confermato()">Conferma</button>
-				<button class="btn btn-default" data-toggle="collapse" data-target="#collapse-tabella" aria-expanded="false" onclick="aggiungiRighe()"
-					id="altriUtenti">Visualizza altri utenti</button>
+			<div class="row">
+				<div class="col-md-12">
+					<div align="center">
+						<button class="btn btn-default" onclick="confermato()">Conferma</button>
+						<button class="btn btn-default" data-toggle="collapse" data-target="#collapse-tabella" aria-expanded="false" onclick="aggiungiRighe()"
+							id="altriUtenti">Visualizza altri utenti</button>
+					</div>
+				</div>
 			</div>
-			<div class="collapse" id="collapse-tabella">
-				<div class="well table-responsive">
-					<table class="table table-striped" id="tabella">
-						<thead id="thead">
-							<tr>
-								<th>Nome</th>
-								<th>Cognome</th>
-								<th>Età</th>
-								<th>Laurea</th>
-								<th>Azioni</th>
-							</tr>
-						</thead>
-						<tbody id="table-body">
-						</tbody>
-					</table>
+			<div class="row">
+				<hr>
+				<div class="col-md-12">
+					<div class="collapse" id="collapse-tabella">
+						<div class="well table-responsive">
+							<table class="table table-striped" id="tabella">
+								<thead id="thead">
+									<tr>
+										<th>Nome</th>
+										<th>Cognome</th>
+										<th>Età</th>
+										<th>Laurea</th>
+										<th>Azioni</th>
+									</tr>
+								</thead>
+								<tbody id="table-body">
+								</tbody>
+							</table>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -127,6 +143,8 @@
 	<!-- Include all compiled plugins (below), or include individual files as needed -->
 	<script src="resources/js/bootstrap.min.js"></script>
 	<script src="resources/js/common.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
 	<script type="text/javascript" src="resources/js/form.js"></script>
 </body>
 </html>
