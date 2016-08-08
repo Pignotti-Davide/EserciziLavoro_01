@@ -1,9 +1,17 @@
 @CHARSET "ISO-8859-1";
 
-label {
+label.maroon {
 	color: maroon;
 }
 
-span {
+span.black {
 	color: black;
+}
+
+.verticalSpace {
+	margin-bottom: 10px;
+}
+
+.hidden {
+	display: none;
 }

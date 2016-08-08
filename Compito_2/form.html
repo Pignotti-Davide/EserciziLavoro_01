@@ -8,8 +8,8 @@
 <title>Register</title>
 
 <!-- Bootstrap -->
-<link href="resources/css/bootstrap.min.css" rel="stylesheet">
-
+<link href="resources/css/bootstrap.css" rel="stylesheet">
+<link rel="stylesheet" href="resources/css/common.css">
 <link href="resources/css/form.css" rel="stylesheet">
 
 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -23,113 +23,108 @@
 	<div class="container">
 		<div id="header"></div>
 
-		<div class="jumbotron">
-			<div align="center">
+		<div class="panel">
+			<div class="panel-heading text-center">
 				<h1>Inserisci i tuoi dati:</h1>
 			</div>
-			<form class="form-horizontal" id="form">
-				<div class="row">
-					<div class="col-md-4">
-						<label for="nome">Nome</label>
-						<input type="text" class="form-control" id="nome" placeholder="inserisci il tuo nome">
-					</div>
-					<div class="col-md-4">
-						<label for="cognome">Cognome</label>
-						<input type="text" class="form-control" id="cognome" placeholder="inserisci il tuo cognome">
-					</div>
-					<div class="col-md-4">
-						<label for="data">Data</label>
-						<div class='input-group date' id='data'>
-							<input type='text' class="form-control" placeholder="dd/mm/aaaa" id="birthday" />
-							<span class="input-group-addon">
-								<span class="glyphicon glyphicon-calendar"></span>
-							</span>
+			<div class="panel-body">
+				<form class="form-horizontal" id="form">
+					<div class="row verticalSpace">
+						<div class="col-md-4">
+							<label class="maroon" for="nome">Nome</label>
+							<input type="text" class="form-control" id="nome" placeholder="inserisci il tuo nome">
+						</div>
+						<div class="col-md-4">
+							<label class="maroon" for="cognome">Cognome</label>
+							<input type="text" class="form-control" id="cognome" placeholder="inserisci il tuo cognome">
+						</div>
+						<div class="col-md-4">
+							<label class="maroon" for="data">Data</label>
+							<div class='input-group date datepicker' id='data' data-date-format="dd-mm-yyyy">
+								<input type='text' class="form-control" placeholder="dd/mm/aaaa" id="birthday" />
+								<span class="input-group-addon">
+									<span class="glyphicon glyphicon-calendar"></span>
+								</span>
+							</div>
 						</div>
 					</div>
-				</div>
-				<hr>
-				<div class="row">
-					<div class="col-md-4">
-						<div class="form-group form-inline">
-							<label for="via">Via</label>
+					<div class="row verticalSpace">
+						<div class="col-md-4">
+							<label class="maroon" for="via">Via</label>
+
 							<textarea class="form-control" id="via" placeholder="inserisci l'indirizzo" rows="3"></textarea>
+
 						</div>
-					</div>
-					<div class="col-md-4">
-						<label for="cap">Cap</label>
-						<input type="text" class="form-control" id="cap" maxlength="5" oninput="digit_limit_5()" onkeypress="return isNumberKey(event)"
-							placeholder="inserisci il codice di apertura postale">
-					</div>
-					<div class="col-md-4">
-						<label for="città">Città</label>
-						<select class="form-control">
-							<optgroup label="Europe">
+						<div class="col-md-4">
+							<label class="maroon" for="cap">Cap</label>
+							<input type="text" class="form-control" id="cap" maxlength="5" oninput="digit_limit_5()" onkeypress="return isNumberKey(event)"
+								placeholder="inserisci il codice di apertura postale">
+						</div>
+						<div class="col-md-4">
+							<label class="maroon" for="città">Città</label>
+							<select class="form-control">
 								<option value="Rome">Rome</option>
 								<option value="Paris">Paris</option>
-							</optgroup>
-							<optgroup label="North America">
 								<option value="New York">New York</option>
-							</optgroup>
-						</select>
+							</select>
+						</div>
 					</div>
-				</div>
-				<hr>
-				<div class="row">
+					<div class="row">
 
-					<div class="form-group form-inline">
-						<div class="col-md-4">
-							<div class="checkbox">
-								<label>
-									<span>
+						<div class="form-group form-inline">
+							<div class="col-md-4">
+								<div class="checkbox">
+									<label class="maroon">
 										Laurea?
 										<input type="checkbox" id="laurea">
 
-									</span>
-								</label>
+									</label>
+								</div>
 							</div>
-						</div>
-						<div class="col-md-8">
-							<div class="radio" id="tipo_laurea" style="display: none;">
-
-								<input type="radio" name="tipo" value="triennale">
-								Triennale
-								<input type="radio" name="tipo" value="magistrale">
-								Magistrale
-								<input type="radio" name="tipo" value="master">
-								Master
+							<div class="col-md-8">
+								<div class="radio hidden" id="tipo_laurea">
+									<input type="radio" name="tipo" value="triennale">
+									Triennale
+									<input type="radio" name="tipo" value="magistrale">
+									Magistrale
+									<input type="radio" name="tipo" value="master">
+									Master
+								</div>
 							</div>
 						</div>
 					</div>
-				</div>
-			</form>
-			<hr>
-			<div class="row">
-				<div class="col-md-12">
-					<div align="center">
-						<button class="btn btn-default" onclick="confermato()">Conferma</button>
-						<button class="btn btn-default" data-toggle="collapse" data-target="#collapse-tabella" aria-expanded="false" onclick="aggiungiRighe()"
-							id="altriUtenti">Visualizza altri utenti</button>
+				</form>
+			</div>
+			<div class="panel-footer">
+				<div class="row">
+					<div class="col-md-12">
+						<div align="center">
+							<button class="btn btn-default" onclick="confermato()">Conferma</button>
+							<button class="btn btn-default" data-toggle="collapse" data-target="#collapse-tabella" aria-expanded="false" onclick="aggiungiRighe()"
+								id="altriUtenti">Visualizza altri utenti</button>
+						</div>
 					</div>
 				</div>
 			</div>
-			<div class="row">
-				<hr>
-				<div class="col-md-12">
-					<div class="collapse" id="collapse-tabella">
-						<div class="well table-responsive">
-							<table class="table table-striped" id="tabella">
-								<thead id="thead">
-									<tr>
-										<th>Nome</th>
-										<th>Cognome</th>
-										<th>Età</th>
-										<th>Laurea</th>
-										<th>Azioni</th>
-									</tr>
-								</thead>
-								<tbody id="table-body">
-								</tbody>
-							</table>
+			<div class="panel">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="collapse" id="collapse-tabella">
+							<div class="well table-responsive">
+								<table class="table table-striped" id="tabella">
+									<thead id="thead">
+										<tr>
+											<th>Nome</th>
+											<th>Cognome</th>
+											<th>Età</th>
+											<th>Laurea</th>
+											<th>Azioni</th>
+										</tr>
+									</thead>
+									<tbody id="table-body">
+									</tbody>
+								</table>
+							</div>
 						</div>
 					</div>
 				</div>

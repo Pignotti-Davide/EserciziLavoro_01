@@ -1,17 +1,7 @@
 @CHARSET "ISO-8859-1";
 
-img {
-	float: left;
-}
-
-.jumbotron {
+.myJumboStyle {
 	background: teal;
 	opacity: 20;
 }
 
-	
-
-.circle {
-    border: dotted 4px #ffffff;
-    border-radius: 400%
-}

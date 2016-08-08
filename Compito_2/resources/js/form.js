@@ -1,5 +1,5 @@
 var utenti=[];
-var numClick=0;
+var selectedDate;
 
 
 function digit_limit_5() {
@@ -11,8 +11,9 @@ function digit_limit_5() {
 
 function isNumberKey(evt){
 	var charCode = (evt.which) ? evt.which : event.keyCode
-			if (charCode > 31 && (charCode < 48 || charCode > 57))
+			if (charCode > 31 && (charCode < 48 || charCode > 57)) {
 				return false;
+			}
 	return true;
 }
 
@@ -65,16 +66,18 @@ function canc(j){
 };
 
 $(function () {
-	$('#data').datetimepicker();
+	$('#data').datetimepicker({
+		format: 'DD/MM/YYYY'
+	});
+
 });
 
-	function calcAge () {
-		
-	var birthday= new Date($('#data').datepicker('getDate'));
+function calcAge () {
+	birthday= new Date($('#data').datepicker('getDate'));
 	today     = new Date();
 	var years = (today.getFullYear() - birthday.getFullYear());
 	if (today.getMonth() < birthday.getMonth() || 
 			today.getMonth() == birthday.getMonth() && today.getDate() < birthday.getDate()) {
 	}
 	return years;
-	};
+};
