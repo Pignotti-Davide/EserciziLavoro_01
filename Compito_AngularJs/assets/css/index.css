@@ -1,0 +1,49 @@
+@CHARSET "ISO-8859-1";
+
+.myJumboStyle {
+	background: teal;
+	opacity: 20;
+}
+
+
+label.maroon {
+	color: maroon;
+}
+
+span.black {
+	color: black;
+}
+
+.verticalSpace {
+	margin-bottom: 10px;
+}
+
+.notVisible {
+	display: none;
+}
+
+.alignCorrection {
+	display: inline-block;
+}
+
+
+.borderBlack {
+	border: 1px;
+	border-style: solid;
+	border-color: black;
+}
+
+ul.simple {
+	list-style-type: none;
+}
+
+.bold {
+	font-weight: bold;
+}
+.background {
+	background: url('../images/blue.jpg');
+}
+
+.information {
+	color: blue;
+}
