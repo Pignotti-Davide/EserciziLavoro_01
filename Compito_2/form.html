@@ -71,12 +71,12 @@
 						<div class="col-md-4">
 							<div class="checkbox alignCorrection">
 								<label class="maroon">
-									<input  type="checkbox" id="laurea">
+									<input  type="checkbox" id="laurea" onchange="valueChanged()">
 									Laurea?
 								</label>
 							</div>
 						</div>
-						<div class="col-md-8 notVisible" id="tipo_laurea">
+						<div class="col-md-8 hide" id="tipo_laurea">
 							<label class="radio-inline">
 								<input type="radio" name="tipo" value="triennale">
 								Triennale
@@ -105,7 +105,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="panel notVisible" id="table_panel">
+		<div class="panel hide" id="table_panel">
 			<div class="row">
 				<div class="col-md-12">
 					<div class="collapse" id="collapse-tabella">

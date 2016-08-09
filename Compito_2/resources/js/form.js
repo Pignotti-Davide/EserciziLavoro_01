@@ -34,7 +34,8 @@ function confirm() {
 function addRows(){
 	var table=$("#table_panel");
 	if (users.length!=0) {
-		table.removeClass("notVisible")
+		table.removeClass("hide");
+		table.addClass("show");
 		var tbody = $("#table-body");
 		tbody.empty();
 		var colonne = $("#thead").length; 
@@ -56,12 +57,24 @@ function addRows(){
 			);
 		};
 	}
-	else table.addClass("notVisible");
+
+	else {
+		table.removeClass("show");
+		table.addClass("hide");
+	}
 };
 
-$('#laurea').click(function() {
-	$("#tipo_laurea").toggle(this.checked);
-});
+function valueChanged()
+{
+	if($('#laurea').is(":checked"))   {
+		$("#tipo_laurea").addClass("show");
+		$("#tipo_laurea").removeClass("hide");
+	}
+	else
+		$("#tipo_laurea").addClass("hide");{
+			$("#tipo_laurea").removeClass("show");
+		}
+}
 
 function deleteRow(j){
 	users.splice(j,1);
