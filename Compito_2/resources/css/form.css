@@ -15,3 +15,7 @@ span.black {
 .notVisible {
 	display: none;
 }
+
+.alignCorrection {
+	display: inline-block;
+}
