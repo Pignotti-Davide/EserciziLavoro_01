@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+<meta charset="ISO-8859-1">
+<title>Index</title>
+<link rel="stylesheet" href="assets/css/bootstrap.css">
+<link rel="stylesheet" href="assets/css/common.css">
+<link rel="stylesheet" href="assets/css/index.css">
+</head>
+
+
+<body class="background">
+	<div class="container">
+		<nav class="navbar navbar-inverse">
+			<div class="container-fluid">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<a class="navbar-brand" href="#/">Home</a>
+				</div>
+				<ul class="nav navbar-nav navbar-right">
+					<li>
+						<a href="#presentation"> Presentazione </a>
+					</li>
+					<li>
+						<a href="#register"> Registrati </a>
+					</li>
+				</ul>
+				<!-- /.navbar-collapse -->
+			</div>
+			<!-- /.container-fluid -->
+		</nav>
+		
+		
+<!-- 		CONTENUTO -->
+		<div ng-view></div>
+		
+		
+		
+		<div class="panel panel-info information">
+			<div class="panel-body">
+				<div class="row">
+					<div class="col-md-6">
+						<ul class="list-unstyled">
+							<li>Autore: Davide Pignotti</li>
+							<li>Data: 08/08/2016</li>
+							<li>Citta': Roma</li>
+
+						</ul>
+					</div>
+					<div class="col-md-6">
+						<ul class="list-unstyled">
+							<li>Contatti: Tel: 334 52 42 546</li>
+							<li>Email: davide@gmail.com</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="assets/js/vendor/angular.js"></script>
+	<script type="text/javascript" src="assets/js/vendor/angular-route.js"></script>
+	<script type="text/javascript" src="assets/js/vendor/jquery-3.1.0.js"></script>
+	<script type="text/javascript" src="assets/js/vendor/jquery-ui.js"></script>
+	<script src="assets/js/vendor/bootstrap.js"></script>
+	<script src="assets/js/vendor/moment.js"></script>
+	<script src="assets/js/vendor/bootstrap-datetimepicker.min.js"></script>
+	<script type="text/javascript" src="assets/js/app.js"></script>
+
+</body>
+</html>
