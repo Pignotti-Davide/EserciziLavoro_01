@@ -1,5 +1,6 @@
 var app = angular.module("myApp", ["ngRoute"]);
 
+
 app.config(function($routeProvider) {
 	  $routeProvider
 	  .when("/", {
@@ -12,3 +13,4 @@ app.config(function($routeProvider) {
 	    templateUrl : "assets/partials/form.htm"
 	  })
 	});
+

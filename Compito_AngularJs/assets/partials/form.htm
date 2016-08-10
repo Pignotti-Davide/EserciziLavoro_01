@@ -1,4 +1,4 @@
-<div class="panel">
+<div class="panel" ng-controller="formCtrl">
 	<div class="panel-heading text-center">
 		<h1>Inserisci i tuoi dati:</h1>
 	</div>
@@ -6,17 +6,17 @@
 		<form class="form-horizontal" id="form">
 			<div class="row verticalSpace">
 				<div class="col-md-4">
-					<label class="maroon" for="nome">Nome</label>
-					<input type="text" class="form-control" id="nome" placeholder="inserisci il tuo nome">
+					<label class="maroon">Nome</label>
+					<input type="text" class="form-control" ng-model="name" placeholder="inserisci il tuo nome">
 				</div>
 				<div class="col-md-4">
-					<label class="maroon" for="cognome">Cognome</label>
-					<input type="text" class="form-control" id="cognome" placeholder="inserisci il tuo cognome">
+					<label class="maroon">Cognome</label>
+					<input type="text" class="form-control" ng-model="surname" placeholder="inserisci il tuo cognome">
 				</div>
 				<div class="col-md-4">
-					<label class="maroon" for="data">Data</label>
-					<div class="input-group date datepicker" id="data" data-date-format="dd-mm-yyyy">
-						<input type="text" class="form-control" placeholder="dd/mm/aaaa" id="birthday" />
+					<label class="maroon">Data</label>
+					<div class="input-group date datepicker" ng-model="date" data-date-format="dd-mm-yyyy">
+						<input type="text" class="form-control" placeholder="dd/mm/aaaa" ng-model="birthday" />
 						<span class="input-group-addon">
 							<span class="glyphicon glyphicon-calendar"></span>
 						</span>
@@ -25,17 +25,19 @@
 			</div>
 			<div class="row verticalSpace">
 				<div class="col-md-4">
-					<label class="maroon" for="via">Via</label>
-					<textarea class="form-control" id="via" placeholder="inserisci l'indirizzo" rows="3"></textarea>
+					<label class="maroon">Via</label>
+					<textarea class="form-control" ng-model="street" placeholder="inserisci l'indirizzo" rows="3"></textarea>
 				</div>
 				<div class="col-md-4">
-					<label class="maroon" for="cap">Cap</label>
-					<input type="text" class="form-control" id="cap" maxlength="5" oninput="digit_limit_5()" onkeypress="return isNumberKey(event)"
+					<label class="maroon">Cap</label>
+					<input type="text" class="form-control" ng-model="cap" only-digits maxlength="5"
 						placeholder="inserisci il codice di apertura postale">
+
 				</div>
 				<div class="col-md-4">
-					<label class="maroon" for="città">Città</label>
-					<select class="form-control">
+					<label class="maroon">Citta'</label>
+					<select class="form-control" ng-model="city">
+						<option value="" disabled selected>Seleziona una citta'</option>
 						<option value="Rome">Rome</option>
 						<option value="Paris">Paris</option>
 						<option value="New York">New York</option>
@@ -46,22 +48,22 @@
 				<div class="col-md-4">
 					<div class="checkbox alignCorrection">
 						<label class="maroon">
-							<input type="checkbox" id="laurea" onchange="valueChanged()">
+							<input type="checkbox" ng-model="degree">
 							Laurea?
 						</label>
 					</div>
 				</div>
-				<div class="col-md-8 hide" id="tipo_laurea">
+				<div class="col-md-8" ng-show="degree">
 					<label class="radio-inline">
-						<input type="radio" name="tipo" value="triennale">
+						<input type="radio" ng-model="type" value="triennale">
 						Triennale
 					</label>
 					<label class="radio-inline">
-						<input type="radio" name="tipo" value="magistrale">
+						<input type="radio" ng-model="type" value="magistrale">
 						Magistrale
 					</label>
 					<label class="radio-inline">
-						<input type="radio" name="tipo" value="master">
+						<input type="radio" ng-model="type" value="master">
 						Master
 					</label>
 				</div>
@@ -72,9 +74,9 @@
 		<div class="row">
 			<div class="col-md-12">
 				<div align="center">
-					<button class="btn btn-default" onclick="confirm()">Conferma</button>
-					<button class="btn btn-default" data-toggle="collapse" data-target="#collapse-tabella" aria-expanded="false" onclick="addRows()"
-						id="altriUtenti">Visualizza altri utenti</button>
+					<button class="btn btn-default">Conferma</button>
+					<button class="btn btn-default" data-toggle="collapse" data-target="#collapse-tabella" aria-expanded="false" id="altriUtenti">Visualizza
+						altri utenti</button>
 				</div>
 			</div>
 		</div>
