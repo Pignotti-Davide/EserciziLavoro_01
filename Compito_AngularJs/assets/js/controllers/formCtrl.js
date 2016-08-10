@@ -47,3 +47,10 @@ formCtrl.directive("onlyDigits", function () {
 		}
 	};
 });
+
+$(function () {
+	$("#calendar").datetimepicker({
+		format: "DD/MM/YYYY"
+	});
+
+});
