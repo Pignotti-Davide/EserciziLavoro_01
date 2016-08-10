@@ -3,22 +3,22 @@
 		<div class="panel-heading text-center">
 			<h1>Inserisci i tuoi dati:</h1>
 		</div>
-		<form class="form-horizontal" ng-model="form">
+		<form class="form-horizontal" name="form" novalidate >
 			<div class="panel-body">
 
 				<div class="row verticalSpace">
 					<div class="col-md-4">
 						<label class="maroon">Nome</label>
-						<input type="text" class="form-control" ng-model="person.name" placeholder="inserisci il tuo nome">
+						<input type="text" class="form-control" ng-model="person.name" required placeholder="inserisci il tuo nome">
 					</div>
 					<div class="col-md-4">
 						<label class="maroon">Cognome</label>
-						<input type="text" class="form-control" ng-model="person.surname" placeholder="inserisci il tuo cognome">
+						<input type="text" class="form-control" ng-model="person.surname" required placeholder="inserisci il tuo cognome">
 					</div>
 					<div class="col-md-4">
 						<label class="maroon">Data</label>
-						<div class="input-group date datepicker" id="calendar" data-date-format="dd-mm-yyyy">
-							<input type="text" class="form-control" placeholder="dd/mm/yyyy" ng-model="person.birthday" />
+						<div class="input-group date datepicker" id="calendar"  data-date-format="dd-mm-yyyy">
+							<input type="text" class="form-control" placeholder="dd/mm/yyyy" ng-model="person.birthday" required />
 							<span class="input-group-addon">
 								<span class="glyphicon glyphicon-calendar"></span>
 							</span>
@@ -74,7 +74,7 @@
 				<div class="row">
 					<div class="col-md-12">
 						<div align="center">
-							<button type="submit" class="btn btn-default" ng-click="createPerson();resetForm()">Conferma</button>
+							<button class="btn btn-default" ng-disabled="form.$invalid" ng-click="createPerson();resetForm()" >Conferma</button>
 							<button class="btn btn-default" ng-click="show=!show" data-toggle="collapse" data-target="#collapse-tabella" aria-expanded="false">Visualizza
 								altri utenti</button>
 						</div>

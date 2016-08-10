@@ -2,16 +2,7 @@ var app = angular.module("myApp");
 var peopleService=app.service('peopleService', function() {
    
 	people=[];
-	person={
-			name:"",
-			surname:"",
-			birthday:"",
-			degree:"",
-			city:"",
-			street:"",
-			cap:""
-	};
-
+	
 	this.savePerson= function(person){
 		var aPerson=new Object();
 		aPerson.name=person.name;

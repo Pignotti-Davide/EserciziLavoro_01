@@ -24,4 +24,5 @@ var formCtrl=app.controller("formCtrl", function($scope, peopleService) {
 		if (peopleService.getPeople().length!=0) return true;
 		else return false;
 	}
+	
 });
