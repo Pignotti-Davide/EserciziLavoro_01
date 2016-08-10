@@ -9,16 +9,16 @@
 				<div class="row verticalSpace">
 					<div class="col-md-4">
 						<label class="maroon">Nome</label>
-						<input type="text" class="form-control" ng-model="params.name" placeholder="inserisci il tuo nome">
+						<input type="text" class="form-control" ng-model="person.name" placeholder="inserisci il tuo nome">
 					</div>
 					<div class="col-md-4">
 						<label class="maroon">Cognome</label>
-						<input type="text" class="form-control" ng-model="params.surname" placeholder="inserisci il tuo cognome">
+						<input type="text" class="form-control" ng-model="person.surname" placeholder="inserisci il tuo cognome">
 					</div>
 					<div class="col-md-4">
 						<label class="maroon">Data</label>
 						<div class="input-group date datepicker" id="calendar" data-date-format="dd-mm-yyyy">
-							<input type="text" class="form-control" placeholder="dd/mm/yyyy" ng-model="params.birthday" />
+							<input type="text" class="form-control" placeholder="dd/mm/yyyy" ng-model="person.birthday" />
 							<span class="input-group-addon">
 								<span class="glyphicon glyphicon-calendar"></span>
 							</span>
@@ -28,17 +28,17 @@
 				<div class="row verticalSpace">
 					<div class="col-md-4">
 						<label class="maroon">Via</label>
-						<textarea class="form-control" ng-model="params.street" placeholder="inserisci l'indirizzo" rows="3"></textarea>
+						<textarea class="form-control" ng-model="person.street" placeholder="inserisci l'indirizzo" rows="3"></textarea>
 					</div>
 					<div class="col-md-4">
 						<label class="maroon">Cap</label>
-						<input type="text" class="form-control" ng-model="params.cap" only-digits maxlength="5"
+						<input type="text" class="form-control" ng-model="person.cap" only-digits maxlength="5"
 							placeholder="inserisci il codice di apertura postale">
 
 					</div>
 					<div class="col-md-4">
 						<label class="maroon">Citta'</label>
-						<select class="form-control" ng-model="params.city">
+						<select class="form-control" ng-model="person.city">
 							<option value="Rome">Rome</option>
 							<option value="Paris">Paris</option>
 							<option value="New York">New York</option>
@@ -49,22 +49,22 @@
 					<div class="col-md-4">
 						<div class="checkbox alignCorrection">
 							<label class="maroon">
-								<input type="checkbox" ng-model="params.degree">
+								<input type="checkbox" ng-model="person.degree">
 								Laurea?
 							</label>
 						</div>
 					</div>
-					<div class="col-md-8" ng-show="params.degree">
+					<div class="col-md-8" ng-show="person.degree">
 						<label class="radio-inline">
-							<input type="radio" ng-model="params.type" value="triennale">
+							<input type="radio" ng-model="person.type" value="triennale">
 							Triennale
 						</label>
 						<label class="radio-inline">
-							<input type="radio" ng-model="params.type" value="magistrale">
+							<input type="radio" ng-model="person.type" value="magistrale">
 							Magistrale
 						</label>
 						<label class="radio-inline">
-							<input type="radio" ng-model="params.type" value="master">
+							<input type="radio" ng-model="person.type" value="master">
 							Master
 						</label>
 					</div>
@@ -74,7 +74,7 @@
 				<div class="row">
 					<div class="col-md-12">
 						<div align="center">
-							<button type="submit" class="btn btn-default" ng-click="createPerson(params);resetForm()">Conferma</button>
+							<button type="submit" class="btn btn-default" ng-click="createPerson();resetForm()">Conferma</button>
 							<button class="btn btn-default" ng-click="show=!show" data-toggle="collapse" data-target="#collapse-tabella" aria-expanded="false">Visualizza
 								altri utenti</button>
 						</div>
