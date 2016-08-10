@@ -1,105 +1,116 @@
-<div class="panel" ng-controller="formCtrl">
-	<div class="panel-heading text-center">
-		<h1>Inserisci i tuoi dati:</h1>
-	</div>
-	<div class="panel-body">
-		<form class="form-horizontal" id="form">
-			<div class="row verticalSpace">
-				<div class="col-md-4">
-					<label class="maroon">Nome</label>
-					<input type="text" class="form-control" ng-model="name" placeholder="inserisci il tuo nome">
-				</div>
-				<div class="col-md-4">
-					<label class="maroon">Cognome</label>
-					<input type="text" class="form-control" ng-model="surname" placeholder="inserisci il tuo cognome">
-				</div>
-				<div class="col-md-4">
-					<label class="maroon">Data</label>
-					<div class="input-group date datepicker" ng-model="date" data-date-format="dd-mm-yyyy">
-						<input type="text" class="form-control" placeholder="dd/mm/aaaa" ng-model="birthday" />
-						<span class="input-group-addon">
-							<span class="glyphicon glyphicon-calendar"></span>
-						</span>
+<div ng-controller="formCtrl">
+	<div class="panel">
+		<div class="panel-heading text-center">
+			<h1>Inserisci i tuoi dati:</h1>
+		</div>
+		<div class="panel-body">
+			<form class="form-horizontal" ng-model="form">
+				<div class="row verticalSpace">
+					<div class="col-md-4">
+						<label class="maroon">Nome</label>
+						<input type="text" class="form-control" ng-model="params.name" placeholder="inserisci il tuo nome">
+					</div>
+					<div class="col-md-4">
+						<label class="maroon">Cognome</label>
+						<input type="text" class="form-control" ng-model="params.surname" placeholder="inserisci il tuo cognome">
+					</div>
+					<div class="col-md-4">
+						<label class="maroon">Data</label>
+						<div class="input-group date datepicker" data-date-format="dd-mm-yyyy">
+							<input type="text" class="form-control" placeholder="dd/mm/yyyy" ng-model="params.birthday" />
+							<span class="input-group-addon">
+								<span class="glyphicon glyphicon-calendar"></span>
+							</span>
+						</div>
 					</div>
 				</div>
-			</div>
-			<div class="row verticalSpace">
-				<div class="col-md-4">
-					<label class="maroon">Via</label>
-					<textarea class="form-control" ng-model="street" placeholder="inserisci l'indirizzo" rows="3"></textarea>
-				</div>
-				<div class="col-md-4">
-					<label class="maroon">Cap</label>
-					<input type="text" class="form-control" ng-model="cap" only-digits maxlength="5"
-						placeholder="inserisci il codice di apertura postale">
+				<div class="row verticalSpace">
+					<div class="col-md-4">
+						<label class="maroon">Via</label>
+						<textarea class="form-control" ng-model="params.street" placeholder="inserisci l'indirizzo" rows="3"></textarea>
+					</div>
+					<div class="col-md-4">
+						<label class="maroon">Cap</label>
+						<input type="text" class="form-control" ng-model="params.cap" only-digits maxlength="5"
+							placeholder="inserisci il codice di apertura postale">
 
+					</div>
+					<div class="col-md-4">
+						<label class="maroon">Citta'</label>
+						<select class="form-control" ng-model="params.city">
+							<option value="" disabled selected>Seleziona una citta'</option>
+							<option value="Rome">Rome</option>
+							<option value="Paris">Paris</option>
+							<option value="New York">New York</option>
+						</select>
+					</div>
 				</div>
-				<div class="col-md-4">
-					<label class="maroon">Citta'</label>
-					<select class="form-control" ng-model="city">
-						<option value="" disabled selected>Seleziona una citta'</option>
-						<option value="Rome">Rome</option>
-						<option value="Paris">Paris</option>
-						<option value="New York">New York</option>
-					</select>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-4">
-					<div class="checkbox alignCorrection">
-						<label class="maroon">
-							<input type="checkbox" ng-model="degree">
-							Laurea?
+				<div class="row">
+					<div class="col-md-4">
+						<div class="checkbox alignCorrection">
+							<label class="maroon">
+								<input type="checkbox" ng-model="params.degree">
+								Laurea?
+							</label>
+						</div>
+					</div>
+					<div class="col-md-8" ng-show="params.degree">
+						<label class="radio-inline">
+							<input type="radio" ng-model="params.type" value="triennale">
+							Triennale
+						</label>
+						<label class="radio-inline">
+							<input type="radio" ng-model="params.type" value="magistrale">
+							Magistrale
+						</label>
+						<label class="radio-inline">
+							<input type="radio" ng-model="params.type" value="master">
+							Master
 						</label>
 					</div>
 				</div>
-				<div class="col-md-8" ng-show="degree">
-					<label class="radio-inline">
-						<input type="radio" ng-model="type" value="triennale">
-						Triennale
-					</label>
-					<label class="radio-inline">
-						<input type="radio" ng-model="type" value="magistrale">
-						Magistrale
-					</label>
-					<label class="radio-inline">
-						<input type="radio" ng-model="type" value="master">
-						Master
-					</label>
-				</div>
-			</div>
-		</form>
-	</div>
-	<div class="panel-footer">
-		<div class="row">
-			<div class="col-md-12">
-				<div align="center">
-					<button class="btn btn-default">Conferma</button>
-					<button class="btn btn-default" data-toggle="collapse" data-target="#collapse-tabella" aria-expanded="false" id="altriUtenti">Visualizza
-						altri utenti</button>
+		</div>
+		<div class="panel-footer">
+			<div class="row">
+				<div class="col-md-12">
+					<div align="center">
+						<button type="submit" class="btn btn-default" ng-click="createPerson(params);resetForm()">Conferma</button>
+						<button class="btn btn-default" ng-click="show=!show" data-toggle="collapse" data-target="#collapse-tabella" aria-expanded="false">Visualizza altri
+							utenti</button>
+					</div>
 				</div>
 			</div>
 		</div>
+		</form>
 	</div>
-</div>
-<div class="panel hide" id="table_panel">
-	<div class="row">
-		<div class="col-md-12">
-			<div class="collapse" id="collapse-tabella">
-				<div class="table-responsive">
-					<table class="table table-bordered" id="tabella">
-						<thead id="thead">
-							<tr>
-								<th>Nome</th>
-								<th>Cognome</th>
-								<th>Età</th>
-								<th>Laurea</th>
-								<th>Azioni</th>
-							</tr>
-						</thead>
-						<tbody id="table-body">
-						</tbody>
-					</table>
+	<div class="panel" ng-show="show&&showTable()">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="collapse" id="collapse-tabella">
+					<div class="table-responsive">
+						<table class="table table-bordered">
+							<thead id="thead">
+								<tr>
+									<th>Nome</th>
+									<th>Cognome</th>
+									<th>Eta'</th>
+									<th>Laurea</th>
+									<th>Azioni</th>
+								</tr>
+							</thead>
+							<tbody id="table-body">
+								<tr ng-repeat="person in people">
+									<td>{{person.name}}</td>
+									<td>{{person.surname}}</td>
+									<td>{{person.age}}</td>
+									<td>{{person.degree}}</td>
+									<td>
+										<button class="btn btn-danger" ng-click="removePerson($index)">Delete</button>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
 				</div>
 			</div>
 		</div>
