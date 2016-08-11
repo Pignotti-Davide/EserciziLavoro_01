@@ -1,0 +1,19 @@
+@CHARSET "ISO-8859-1";
+
+.btnMargins10 {
+	margin: 10%;
+}
+
+div.boxPadding10 {
+	padding: 20%;
+}
+
+img.borderPadding10{
+	border: medium;
+	border-style: double;
+	padding: 10%;
+}
+
+img.autoWidth{
+	width: 80%;
+}

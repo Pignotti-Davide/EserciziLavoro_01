@@ -12,5 +12,8 @@ app.config(function($routeProvider) {
 	  .when("/register", {
 	    templateUrl : "assets/partials/form.htm"
 	  })
+	  .when("/buttons", {
+		  templateUrl: "assets/partials/buttons.htm"
+	  })
 	});
 

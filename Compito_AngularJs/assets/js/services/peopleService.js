@@ -5,8 +5,7 @@ var peopleService=app.service('peopleService', function() {
 	
 	this.savePerson= function(person){
 		var aPerson=new Object();
-		aPerson.name=person.name;
-		aPerson.surname=person.surname;
+		aPerson=angular.copy(person);
 		aPerson.age="";
 		if(person.degree){
 			aPerson.degree="Si";
