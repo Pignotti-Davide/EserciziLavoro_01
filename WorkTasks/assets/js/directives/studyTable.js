@@ -1,26 +1,42 @@
-(function() {
-	var app = angular.module("myApp");
-	
-	app.directive('studyTable', function(){
-		return {
-			restrict: 'E',
-			templateUrl: 'assets/partials/study-table.html',
-			controller: function($scope){
-				$scope.css=['CSS',[]];
 
-				$scope.bootstrap=['Bootstrap',[]];
+var app = angular.module("myApp");
 
-				$scope.angular=['Angular.js',[]];
-				
-				this.active='Css';
-				this.setActive=function(tabName){
-					this.active=tabName;					
-				};
-				this.isSet=function(tabName){
-					this.active=tabName;
-				};
-			},
-			controllerAs: 'studyTable'
-		};
-	});
+app.directive('studyTable', function(){
+	return {
+		restrict: 'E',
+		templateUrl: 'assets/partials/study-table.html',
+		controller: function($scope){
+			this.category=[
+			               ['CSS',[{name:"arg1",read: true, applied: false, readAgain: false}]], 
+			               ['Bootstrap', []],
+			               ['Angular.js', []]
+			               ];
+			$scope.newTopic={};
+
+			this.activeTopic=this.category[0];
+			this.setActive=function(num){
+				this.activeTopic=this.category[num];
+
+			};
+			this.isSet=function(num){
+				this.activeTopic===this.category[num];
+			};
+
+			this.setChecked=function(id,bool){
+				if(bool){
+					$(id).attr('checked');
+				}
+			};
+			this.addTopic=function(){
+				this.category[$scope.cathegory][1].push(angular.copy($scope.newTopic));
+				$scope.newTopic={};
+				console.log("insideAddtopic");
+			};
+
+			this.saveChanges=function(){
+						
+			}
+		},
+		controllerAs: 'studyTableCtrl'
+	};
 });
