@@ -1,0 +1,14 @@
+@CHARSET "ISO-8859-1";
+
+body.background {
+	background-image: url("../images/palloncini.jpg");
+}
+
+.background-green {
+	background-color:#cdfed9;
+}
+
+.background-red {
+	background-color: #fecdcd;
+}
+
