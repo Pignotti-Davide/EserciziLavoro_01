@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="myApp">
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Minigiochi</title>
 <link rel="stylesheet" href="assets/css/bootstrap.css">
 <link rel="stylesheet" href="assets/css/font-awesome.css">
 <link rel="stylesheet" href="assets/css/index.css">
 </head>
-<body class="background" onload="init();">
+<body class="background" ng-controller="canvasCtrl" ng-init="init();">
 	<div class="container">
 		<nav class="navbar navbar-inverse">
 			<div class="container-fluid">
@@ -20,22 +20,25 @@
 				</div>
 			</div>
 		</nav>
-		
-		<div class="jumbotron background-green">
-		<h1>Benvenuto!!!!!</h1>
-		<h3>In questa pagina potrai provare tanti minigiochi! Tutti implementati con EaselJs</h3>
-		</div>
-		
-		<div class="panel">
-			<div class="panel-heading text-center background-red"><h2 class="panel-title">Clicca sui cerchi!!!</h2></div>
-			<div class="panel-body">
-			<canvas id="demoCanvas"></canvas>
 
+		<div class="jumbotron background-green">
+			<h1>Benvenuto!!!!!</h1>
+			<h3>In questa pagina potrai provare tanti minigiochi! Tutti implementati con EaselJs</h3>
+		</div>
+
+		<div class="panel">
+			<div class="panel-heading text-center background-red">
+				<h2 class="panel-title">Clicca solo sul nuovo cerchio!</h2>
+				<b>Score: {{score}} </b>
+			</div>
+			<div class="panel-body">
+				<canvas id="demoCanvas"></canvas>
+			</div>
+			<div class="panel-footer text-right">
+			<button class="btn btn-danger" ng-click="resetGame()">Restart</button>
 			</div>
 		</div>
-
 	</div>
-
 
 	<script type="text/javascript" src="assets/js/vendor/jquery-3.1.0.js"></script>
 	<script type="text/javascript" src="assets/js/vendor/jquery-ui.js"></script>
