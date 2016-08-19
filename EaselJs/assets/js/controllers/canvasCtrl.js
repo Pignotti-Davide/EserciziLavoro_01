@@ -23,7 +23,7 @@ function getRandomColor() {
 function init() {
 	var stage = new createjs.Stage("demoCanvas");
 	createjs.Ticker.addEventListener("tick", handleTick);
-	createjs.Ticker.setFPS(60);
+	createjs.Ticker.setFPS(30);
 	
 	var circle = buildCircle(canvas,stage);
 	stage.addChild(circle);
