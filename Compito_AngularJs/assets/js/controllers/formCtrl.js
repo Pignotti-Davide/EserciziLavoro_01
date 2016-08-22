@@ -5,11 +5,9 @@ var formCtrl=app.controller("formCtrl", function($scope, peopleService) {
 	$scope.createPerson=function(){
 		peopleService.savePerson($scope.person);
 	}
-	
 	$scope.removePerson=function(index){
 		peopleService.deletePerson(index)
 	}
-	
 	$scope.resetForm = function() {
 		$scope.person.name=null;
 		$scope.person.surname=null;
@@ -19,10 +17,8 @@ var formCtrl=app.controller("formCtrl", function($scope, peopleService) {
 		$scope.person.street=null;
 		$scope.person.cap=null;
 	};
-	
 	$scope.showTable=function(){
 		if (peopleService.getPeople().length!=0) return true;
 		else return false;
 	}
-	
 });
