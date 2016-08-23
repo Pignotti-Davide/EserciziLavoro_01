@@ -29,5 +29,10 @@ var studyTableCtrl=app.controller('studyTableCtrl', function($scope){
 		$scope.cathegory[$scope.selectedCathegory][1].push(angular.copy($scope.newTopic));
 		$scope.newTopic={};
 	};
+	
+	$scope.showExample=function(partialName){
+		
+		
+	}
 
 });

@@ -1,1 +1,6 @@
 @CHARSET "ISO-8859-1";
+
+div.panel-title-shadow{
+	font-size: xx-large;
+	text-shadow: 2px 2px 5px black;
+}

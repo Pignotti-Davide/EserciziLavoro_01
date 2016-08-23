@@ -1,7 +1,7 @@
 <div class="col-md-10">
 	<div class="panel panel-info">
 
-		<div class="panel-heading text-center">{{activeTopic[0]}}</div>
+		<div class="panel-heading text-center panel-title-shadow">{{activeTopic[0]}}</div>
 		<table class="table">
 			<thead>
 				<tr>
@@ -17,8 +17,10 @@
 					<td><input type="checkbox" ng-model=topic.read></td>
 					<td><input type="checkbox" ng-model=topic.applied></td>
 					<td><input type="checkbox" ng-model=topic.readAgain></td>
+					<td><button class="btn btn-info" ng-click="showExample();">showExample</button></td>
 				</tr>
 			</tbody>
+			<div ng-include="'assets/partials/css/colors.html'"></div>
 		</table>
 		<div class=panel-footer>
 			<button class="btn btn-primary" data-toggle="modal" data-target="#addTopicModal">Aggiungi argomento</button>
@@ -27,7 +29,7 @@
 	</div>
 </div>
 <div class="col-md-2">
-	<nav class="bs-docs-sidebar hidden-print hidden-sm hidden-xs affix">
+	<nav class="bs-docs-sidebar affix">
 		<ul class="nav bs-docs-sidenav" role="tablist">
 			<li class="active"><a href="" ng-click=setActive(0);> CSS </a></li>
 			<li><a href="" ng-click=setActive(1);> Bootstrap </a></li>
