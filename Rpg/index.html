@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+<meta charset="ISO-8859-1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rpg</title>
+<link rel="stylesheet" href="assets/css/bootstrap.css">
+<link rel="stylesheet" href="assets/css/font-awesome.css">
+
+</head>
+<body>
+	<div class="container" id="container">
+		<nav class="navbar">
+			<div class="container-fluid nav-styled">
+				<div class="navbar-header">
+					<div class="btn-nav">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapse1" aria-expanded="false">
+							<span class="sr-only">Toggle navigation</span> <i class="fa fa-bars" aria-hidden="true"></i>
+						</button>
+					</div>
+					<a class="navbar-brand " href="#/"> Home </a>
+				</div>
+				<div class="collapse navbar-collapse" id="collapse1">
+					<ul class="nav navbar-nav navbar-right">
+						<li>
+							<div class="btn-nav">
+							nothing
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+		<div class="jumbotron jumbotron-styled">
+			<h1>Benvenuto!</h1>
+			<h3>Qui puoi giocare</h3>
+		</div>
+
+		<div ng-view></div>
+	</div>
+	<script type="text/javascript" src="assets/js/vendor/jquery-3.1.0.js"></script>
+	<script type="text/javascript" src="assets/js/vendor/jquery-ui.js"></script>
+	<script src="assets/js/vendor/bootstrap.js"></script>
+	<script type="text/javascript" src="assets/js/vendor/angular.js"></script>
+	<script type="text/javascript" src="assets/js/vendor/angular-route.js"></script>
+	<script type="text/javascript" src="assets/js/app.js"></script>
+	<script type="text/javascript" src="assets/js/controllers/mapCtrl.js"></script>
+	<script type="text/javascript" src="assets/js/controllers/tabCtrl.js"></script>
+
+</body>
+</html>
